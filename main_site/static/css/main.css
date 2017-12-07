@@ -1,3 +1,76 @@
-body{
-    background: red;
+body {
+    height: 100vh;
+}
+
+#actual-body {
+    height: 100%
+}
+
+
+/* Main nav bar */
+
+#main-nav {
+    margin-bottom: 0;
+    border-radius: 0px 0px 0px 0px;
+    background: #1f0b21;
+}
+
+
+/* Overall mid section */
+
+.row.content {
+    min-height: 100%;
+    background: rgb(27, 17, 27);
+}
+
+
+/* Overall side bars */
+
+.sidenav {
+    padding-top: 20px;
+    background-color: rgb(14, 11, 14);
+    height: 100vh;
+}
+
+
+/* The left section */
+
+#left-section {
+    border-width: 1px 0px 0px 0px;
+    color: white;
+}
+
+
+/* The mid section */
+
+#main-section {
+    border-width: 0px 1px 0px 1px;
+    border-color: rgb(14, 11, 14);
+    border-style: solid;
+    height: 100vh;
+}
+
+
+/* Overall footer */
+
+footer {
+    background-color: #1f0b21;
+    border-width: 1px 0px 0px 0px;
+    border-color: rgb(14, 11, 14);
+    border-style: solid;
+    color: white;
+    padding: 15px;
+}
+
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {
+        height: auto;
+    }
 }

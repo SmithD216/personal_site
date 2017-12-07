@@ -1,5 +1,6 @@
 {% extends "main_site/base.html" %}
-
+{% load static %}
 {% block content %}
     <p>Rabbits live in cozy burrows.</p>
+    <img src="{% static "img/test.jpg" %}" alt="My image"/>
 {% endblock content %}

@@ -1,5 +1,4 @@
-{% load bootstrap3 %}
-{% load static %}
+{% load bootstrap3 %} {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,14 +9,13 @@
 
     <title>Lapine Dreams</title>
 
-    <LINK REL=StyleSheet HREF="{% static 'css/main.css' %}" TYPE="text/css" MEDIA=screen>
-    {% bootstrap_css %} {% bootstrap_javascript %}
+    <LINK REL=StyleSheet HREF="{% static 'css/main.css' %}" TYPE="text/css" MEDIA=screen> {% bootstrap_css %} {% bootstrap_javascript %}
 </head>
 
 </html>
 
 <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" id="main-nav">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -52,9 +50,9 @@
         </div>
     </nav>
 
-    <div class="container-fluid text-center">
+    <div class="container-fluid text-center" id="actual-body">
         <div class="row content">
-            <div class="col-sm-2 sidenav">
+            <div class="col-sm-2 sidenav" id="left-section">
                 <p>
                     <a href="#">Link</a>
                 </p>
@@ -65,10 +63,10 @@
                     <a href="#">Link</a>
                 </p>
             </div>
-            <div class="col-sm-8 text-left">
-                    {% block content %} {% endblock content %}
+            <div class="col-sm-8 text-left" id="main-section">
+                {% block content %} {% endblock content %}
             </div>
-            <div class="col-sm-2 sidenav">
+            <div class="col-sm-2 sidenav" id="right-section">
                 <div class="well">
                     <p>ADS</p>
                 </div>
