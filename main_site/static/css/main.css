@@ -1,9 +1,7 @@
-body {
-    height: 100vh;
-}
-
-#actual-body {
-    height: 100%
+#actual-body,
+#actual-inner-body {
+    height: 100%;
+    min-height: 100%;
 }
 
 
@@ -13,6 +11,8 @@ body {
     margin-bottom: 0;
     border-radius: 0px 0px 0px 0px;
     background: #1f0b21;
+    border-width: 0px 0px 1px 0px;
+    border-color: rgb(14, 11, 14);
 }
 
 
@@ -29,7 +29,6 @@ body {
 .sidenav {
     padding-top: 20px;
     background-color: rgb(14, 11, 14);
-    height: 100vh;
 }
 
 
@@ -38,6 +37,7 @@ body {
 #left-section {
     border-width: 1px 0px 0px 0px;
     color: white;
+    min-height: 100%;
 }
 
 
@@ -47,13 +47,20 @@ body {
     border-width: 0px 1px 0px 1px;
     border-color: rgb(14, 11, 14);
     border-style: solid;
-    height: 100vh;
+    min-height: 100%;
+}
+
+
+/* The right section */
+
+#right-section {
+    min-height: 100%;
 }
 
 
 /* Overall footer */
 
-footer {
+#main-footer {
     background-color: #1f0b21;
     border-width: 1px 0px 0px 0px;
     border-color: rgb(14, 11, 14);
