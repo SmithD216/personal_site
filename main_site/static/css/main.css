@@ -1,7 +1,19 @@
+html {
+    height: calc(100vh - 112px);
+}
+
+body {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
 #actual-body,
 #actual-inner-body {
     height: 100%;
     min-height: 100%;
+    background: rgb(27, 17, 27);
+    overflow: hidden;
 }
 
 
@@ -13,14 +25,6 @@
     background: #1f0b21;
     border-width: 0px 0px 1px 0px;
     border-color: rgb(14, 11, 14);
-}
-
-
-/* Overall mid section */
-
-.row.content {
-    min-height: 100%;
-    background: rgb(27, 17, 27);
 }
 
 

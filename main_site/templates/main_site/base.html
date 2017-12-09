@@ -12,9 +12,7 @@
     <LINK REL=StyleSheet HREF="{% static 'css/main.css' %}" TYPE="text/css" MEDIA=screen> {% bootstrap_css %} {% bootstrap_javascript %}
 </head>
 
-</html>
-
-<body onresize="adjustSize()">
+<body>
     <nav class="navbar navbar-inverse" id="main-nav">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -73,6 +71,7 @@
                 <div class="well">
                     <p>ADS</p>
                 </div>
+                <button onclick="adjustSize()">Get Size</button>
             </div>
         </div>
     </div>
@@ -81,3 +80,5 @@
         <p>Footer Text</p>
     </footer>
 </body>
+
+</html>
