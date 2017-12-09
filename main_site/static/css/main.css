@@ -1,5 +1,5 @@
 html {
-    height: calc(100vh - 112px);
+    height: 100%;
 }
 
 body {
@@ -10,10 +10,9 @@ body {
 
 #actual-body,
 #actual-inner-body {
-    height: 100%;
-    min-height: 100%;
+    height: auto;
+    min-height: calc(100vh - 112px);
     background: rgb(27, 17, 27);
-    overflow: hidden;
 }
 
 
@@ -25,6 +24,19 @@ body {
     background: #1f0b21;
     border-width: 0px 0px 1px 0px;
     border-color: rgb(14, 11, 14);
+}
+
+#actual-inner-body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#actual-inner-body>[class*='col-'] {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -77,6 +89,9 @@ body {
 /* On small screens, set height to 'auto' for sidenav and grid */
 
 @media screen and (max-width: 767px) {
+    html {
+        height: auto;
+    }
     .sidenav {
         height: auto;
         padding: 15px;
