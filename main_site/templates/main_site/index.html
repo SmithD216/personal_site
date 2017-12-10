@@ -1,6 +1,15 @@
 {% extends "main_site/base.html" %}
-{% load static %}
+{% load bootstrap3 %} {% load static %}
+{% bootstrap_css %} {% bootstrap_javascript %}
+
+
 {% block content %}
+<head>
+    <LINK REL=StyleSheet HREF="{% static 'css/index.css' %}" TYPE="text/css" MEDIA=screen>
+</head>
+
+<body>
     <p>Rabbits live in cozy burrows.</p>
-    <img src="{% static "img/test.jpg" %}" alt="My image"/>
+    <img src="{% static " img/test.jpg " %}" alt="My image" /> 
+</body>
 {% endblock content %}
