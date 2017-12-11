@@ -1,7 +1,19 @@
 .index_entry {
+    margin-bottom: 5px;
+}
+
+.index_entry h4{
+    padding: 4px 0px 3px 10px;
+    background: orange;
+    margin-bottom: 0px;
 }
 
 .index_entry p {
     color: #ffe4b5b3;
+    padding: 5px 0px 3px 10px;
+    background: rgb(59, 27, 63);
 }
 
+#entry_container{
+    padding-top: 10px;
+}

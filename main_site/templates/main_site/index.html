@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <ul>
+    <div id = "entry_container">
         {% for entry in entries %}
             <div class = "index_entry">
                 <h4> {{ entry.title }} - {{ entry.date_added}} </h4>
-                <p>{{ entry.text }}</p>
+                <p>{{ entry }}</p>
             </div>
         {% empty %}
             <li>Rabbits live in cozy burrows.</li>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 {% endblock content %}
