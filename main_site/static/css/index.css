@@ -2,6 +2,10 @@
     margin-bottom: 5px;
 }
 
+.index_entry a{
+    color: rgb(16, 2, 29);
+}
+
 .index_entry h4{
     padding: 4px 0px 3px 10px;
     background: orange;

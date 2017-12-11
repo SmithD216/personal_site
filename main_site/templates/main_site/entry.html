@@ -10,14 +10,10 @@
 
 <body>
     <div id = "entry_container">
-        {% for entry in entries %}
             <div class = "index_entry">
-                <a href="{% url 'main_site:entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} </h4></a>
-                <p>{{ entry }}</p>
+                <h4> {{ entry.title }} - {{ entry.date_added}} </h4>
+                <p>{{ entry.text }}</p>
             </div>
-        {% empty %}
-            <li>Rabbits live in cozy burrows.</li>
-        {% endfor %}
     </div>
 </body>
 {% endblock content %}

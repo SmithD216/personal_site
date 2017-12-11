@@ -9,4 +9,6 @@ app_name = 'main_site'
 urlpatterns = [
     # Home page
     url(r'^$', views.index, name='index'),
+    #Individual entry page
+    url(r'^entries/(?P<entry_id>\d+)/$', views.entry, name='entry'),
 ]
