@@ -11,7 +11,10 @@
 <body>
     <ul>
         {% for entry in entries %}
-            <li>{{ entry }}</li>
+            <div class = "index_entry">
+                <h4> {{ entry.title }} - {{ entry.date_added}} </h4>
+                <p>{{ entry.text }}</p>
+            </div>
         {% empty %}
             <li>Rabbits live in cozy burrows.</li>
         {% endfor %}
