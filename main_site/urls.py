@@ -11,4 +11,8 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     #Individual entry page
     url(r'^entries/(?P<entry_id>\d+)/$', views.entry, name='entry'),
+    #Python projects page
+    url(r'^$python/', views.pyprojects, name='python'),
+    #Javascript projects page
+    url(r'^$javascript/', views.jsprojects, name='jsprojects'),
 ]

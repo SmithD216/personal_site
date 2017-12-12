@@ -13,3 +13,9 @@ def entry(request, entry_id):
     entry = Entry.objects.get(id=entry_id)
     context = {'entry':entry}
     return render(request, 'main_site/entry.html', context)
+
+def pyprojects(request):
+    return render(request, 'main_site/python.html')
+
+def jsprojects(request):
+    return render(request, 'main_site/javascript.html')
