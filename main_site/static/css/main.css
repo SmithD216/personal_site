@@ -85,6 +85,11 @@ body {
     padding: 15px;
 }
 
+.current{
+    color: rgb(14, 11, 14);
+    text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87;
+}
+
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 

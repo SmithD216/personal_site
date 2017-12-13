@@ -12,7 +12,7 @@
     <LINK REL=StyleSheet HREF="{% static 'css/main.css' %}" TYPE="text/css" MEDIA=screen> {% bootstrap_css %} {% bootstrap_javascript %}
 </head>
 
-<body>
+<body onload="updateNav();">
     <nav class="navbar navbar-inverse" id="main-nav">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -25,14 +25,14 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="{% url 'main_site:index' %}">Home</a>
+                    <li>
+                        <a href="{% url 'main_site:index' %}" class="current">Home</a>
                     </li>
                     <li>
                         <a href="{% url 'main_site:pyprojects' %}">Python</a>
                     </li>
                     <li>
-                        <a href="#">Javascript</a>
+                        <a href="{% url 'main_site:jsprojects' %}">Javascript</a>
                     </li>
                 </ul>
             </div>
