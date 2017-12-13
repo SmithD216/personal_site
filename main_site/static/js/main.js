@@ -6,6 +6,7 @@ function updateNav(){
             navlinks[i].classList.add("current")
         } else {
             navlinks[i].classList.remove("current")
+            navlinks[i].classList.add("notCurrent")
         }
     }
 }

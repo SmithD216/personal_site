@@ -85,12 +85,14 @@ body {
     padding: 15px;
 }
 
-.current{
-    color: rgb(14, 11, 14);
-    text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87;
+.current {
+    color: #ffe4b5b3 !important;
+    background: rgb(14, 11, 14)
 }
 
-
+.notCurrent {
+    color: #ffe4b5b3 !important;
+}
 /* On small screens, set height to 'auto' for sidenav and grid */
 
 @media screen and (max-width: 767px) {
