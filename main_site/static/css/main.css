@@ -81,7 +81,7 @@ body {
     border-width: 1px 0px 0px 0px;
     border-color: rgb(14, 11, 14);
     border-style: solid;
-    color: white;
+    color: #ffe4b5b3;
     padding: 15px;
 }
 
@@ -93,6 +93,7 @@ body {
 .notCurrent {
     color: #ffe4b5b3 !important;
 }
+
 /* On small screens, set height to 'auto' for sidenav and grid */
 
 @media screen and (max-width: 767px) {
