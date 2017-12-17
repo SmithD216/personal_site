@@ -5,7 +5,10 @@ from .models import Entry, CodeEntry
 
 def index(request):
     """The home page for the site."""
-    entries = Entry.objects.order_by('-date_added')
+    index_entries = Entry.objects.order_by('-date_added')
+    code_entries = CodeEntry.objects.order_by('-date_added')
+    entries = list(index_entries) + list(code_entries)
+    entries.sort(key=lambda x: x.date_added, reverse=True)
     context = {'entries':entries}
     return render(request, 'main_site/index.html', context)
 

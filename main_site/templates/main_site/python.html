@@ -13,7 +13,7 @@
             <div class = "index_entry">
                 {% if entry.language == 'PYTHON' %}
                     <a href="{% url 'main_site:code_entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} </h4></a>
-                    <p>{{ entry.explanation }}</p>
+                    <p>{{ entry }}</p>
                 {% endif %}
             </div>
         {% empty %}
