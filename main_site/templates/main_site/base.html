@@ -42,34 +42,13 @@
     <div class="container-fluid text-center" id="actual-body">
         <div class="row content" id="actual-inner-body">
             <div class="col-sm-2 sidenav" id="left-section">
-                <p>
-                    <a href="#">Link</a>
-                </p>
-                <p>
-                    <a href="#">Link</a>
-                </p>
-                <p>
-                    <a href="#">Link</a>
-                </p>
+                {% block leftcontent %} {% endblock leftcontent %}
             </div>
             <div class="col-sm-8 text-left" id="main-section">
                 {% block content %} {% endblock content %}
             </div>
             <div class="col-sm-2 sidenav" id="right-section">
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-
-                <button onclick="adjustSize()">Get Size</button>
+                {% block rightcontent %} {% endblock rightcontent %}
             </div>
         </div>
     </div>

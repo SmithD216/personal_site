@@ -2,6 +2,11 @@
 {% load bootstrap3 %} {% load static %}
 {% bootstrap_css %} {% bootstrap_javascript %}
 
+{% block leftcontent %}
+    <p><a href="#">Link</a></p>
+    <p><a href="#">Link</a></p>
+    <p><a href="#">Link</a></p>
+{% endblock leftcontent %}
 
 {% block content %}
 <head>
@@ -21,3 +26,19 @@
     </div>
 </body>
 {% endblock content %}
+
+{% block rightcontent %}
+    <div class="well">
+        <p>ADS</p>
+    </div>
+    <div class="well">
+        <p>ADS</p>
+    </div>
+    <div class="well">
+        <p>ADS</p>
+    </div>
+    <div class="well">
+        <p>ADS</p>
+    </div>
+    <button onclick="adjustSize()">Get Size</button>
+{% endblock rightcontent %}
