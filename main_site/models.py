@@ -20,8 +20,16 @@ class Entry(models.Model):
 
 class CodeEntry(models.Model):
     """An entry on the programming pages of the website."""
+    JAVASCRIPT = 'JS'
+    PYTHON = 'PYTHON'
+
     date_added = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=108)
+    LANGUAGE_CHOICES = (
+        (JAVASCRIPT, 'Javascript'),
+        (PYTHON, 'Python'),
+    )
+    language = models.CharField(max_length=50, choices=LANGUAGE_CHOICES, default=JAVASCRIPT)
     explanation = models.TextField()
     notes = models.TextField(blank=True)
     attempt = models.TextField()
