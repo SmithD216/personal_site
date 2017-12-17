@@ -3,4 +3,22 @@
 {% bootstrap_css %} {% bootstrap_javascript %}
 
 {% block content %}
+<head>
+    <LINK REL=StyleSheet HREF="{% static 'css/index.css' %}" TYPE="text/css" MEDIA=screen>
+</head>
+
+<body>
+    <div id = "entry_container">
+        {% for entry in code_entries %}
+            <div class = "index_entry">
+                {% if entry.language == 'PYTHON' %}
+                    <a href="{% url 'main_site:code_entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} </h4></a>
+                    <p>{{ entry.explanation }}</p>
+                {% endif %}
+            </div>
+        {% empty %}
+            <li>Rabbits live in cozy burrows.</li>
+        {% endfor %}
+    </div>
+</body>
 {% endblock content %}

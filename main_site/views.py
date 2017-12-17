@@ -17,7 +17,7 @@ def entry(request, entry_id):
 def pyprojects(request):
     code_entries = CodeEntry.objects.order_by('-date_added')
     context = {'code_entries':code_entries}
-    return render(request, 'main_site/python.html')
+    return render(request, 'main_site/python.html', context)
 
 def jsprojects(request):
     code_entries = CodeEntry.objects.order_by('-date_added')

@@ -11,8 +11,10 @@
     <div id = "entry_container">
         {% for entry in code_entries %}
             <div class = "index_entry">
-                <a href="{% url 'main_site:code_entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} </h4></a>
-                <p>{{ entry }}</p>
+                {% if entry.language == 'JS' %}
+                    <a href="{% url 'main_site:code_entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} </h4></a>
+                    <p>{{ entry.explanation }}</p>
+                {% endif %}
             </div>
         {% empty %}
             <li>Rabbits live in cozy burrows.</li>
