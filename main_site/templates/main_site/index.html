@@ -17,7 +17,7 @@
     <div id = "entry_container">
         {% for entry in entries %}
             <div class = "index_entry">
-                <a href="{% url 'main_site:entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} </h4></a>
+                <a href="{% url 'main_site:entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} <div class="entry_language">{{ entry.language }}</div></h4></a>
                 <p>{{ entry }}</p>
             </div>
         {% empty %}
