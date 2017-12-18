@@ -1,0 +1,10 @@
+{% extends "main_site/base.html" %}
+
+{% block content %}
+    <p>Add a new code entry:</p>
+    <form action="{% url 'main_site:new_code_entry' %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name="submit">Add Entry</button>
+    </form>
+{% endblock content %}

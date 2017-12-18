@@ -19,6 +19,8 @@ urlpatterns = [
     url(r'^python/$', views.pyprojects, name='pyprojects'),
     #Javascript projects page
     url(r'^javascript/$', views.jsprojects, name='jsprojects'),
+    #Page for adding a new programming entry
+    url(r'^new_code_entry', views.new_code_entry, name='new_code_entry'),
     #Individual project entry page
     url(r'^code_entries/(?P<code_entry_id>\d+)/$', views.code_entry, name='code_entry'),
 ]

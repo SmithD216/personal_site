@@ -10,4 +10,4 @@ class EntryForm(forms.ModelForm):
 class CodeEntryForm(forms.ModelForm):
     class Meta:
         model = CodeEntry
-        fields = ['title']
+        fields = ['title', 'language', 'explanation', 'notes', 'attempt', 'goal']

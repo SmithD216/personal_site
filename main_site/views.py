@@ -49,3 +49,18 @@ def code_entry(request, code_entry_id):
     code_entry = CodeEntry.objects.get(id=code_entry_id)
     context = {'code_entry':code_entry}
     return render(request, 'main_site/code_entry.html', context)
+
+def new_code_entry(request):
+    """Add a new code entry."""
+    if request.method != 'POST':
+        #No data submitted; create a blank form.
+        form = CodeEntryForm()
+    else:
+        #POST data submitted; create a blank form.
+        form = CodeEntryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('main_site:index'))
+    
+    context = {'form':form}
+    return render(request, 'main_site/new_code_entry.html', context)
