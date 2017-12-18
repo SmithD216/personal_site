@@ -17,8 +17,26 @@
     <div id = "entry_container">
         {% for entry in entries %}
             <div class = "index_entry">
-                <a href="{% url 'main_site:entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} <div class="entry_language">{{ entry.language }}</div></h4></a>
-                <p>{{ entry }}</p>
+                {% if entry.language %}
+                    <a href="{% url 'main_site:entry' entry.id %}">
+                        <h4> {{ entry.title }}
+                            <div class="entry_options">
+                                {{ entry.language }}
+                            </div>
+                        </h4>
+                    </a>
+                    <p>{{ entry }}</p>
+                {% else %}
+                    <a href="{% url 'main_site:entry' entry.id %}">
+                        <h4> {{ entry.title }}
+                            <div class="entry_options">
+                                <a href="{% url 'main_site:new_entry' %}">New</a>
+                                GENERAL
+                            </div>
+                        </h4>
+                    </a>
+                    <p>{{ entry }}</p>
+                {% endif %}
             </div>
         {% empty %}
             <li>Rabbits live in cozy burrows.</li>
