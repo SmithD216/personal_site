@@ -35,6 +35,23 @@ def new_entry(request):
     context = {'form':form}
     return render(request, 'main_site/new_entry.html', context)
 
+def edit_entry(request, entry_id):
+    """Edit an existing entry."""
+    entry = Entry.objects.get(id=entry_id)
+    
+    if request.method != 'POST':
+        #Initial request; pre-fill form with the current entry.
+        form = EntryForm(instance=entry)
+    else:
+        #POST data submitted; process data.
+        form = EntryForm(instance=entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('main_site:entry', args=[entry.id]))
+    
+    context = {'entry':entry, 'form':form}
+    return render(request, 'main_site/edit_entry.html', context)
+
 def pyprojects(request):
     code_entries = CodeEntry.objects.order_by('-date_added')
     context = {'code_entries':code_entries}

@@ -14,7 +14,7 @@ urlpatterns = [
     #Page for adding a new entry
     url(r'^new_topic/$', views.new_entry, name='new_entry'),
     #Add an entry edit page here!
-    #---
+    url(r'^edit_entry/(?P<entry_id>\d+)/$', views.edit_entry, name='edit_entry'),
     #Python projects page
     url(r'^python/$', views.pyprojects, name='pyprojects'),
     #Javascript projects page
