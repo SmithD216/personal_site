@@ -81,3 +81,20 @@ def new_code_entry(request):
     
     context = {'form':form}
     return render(request, 'main_site/new_code_entry.html', context)
+
+def edit_code_entry(request, code_entry_id):
+    """Edit an existing code entry."""
+    code_entry = CodeEntry.objects.get(id=code_entry_id)
+
+    if request.method != 'POST':
+        #Initial request; pre-fill form with the current entry.
+        form = CodeEntryForm(instance=code_entry)
+    else:
+        #POST data submitted; process data.
+        form = CodeEntryForm(instance=code_entry, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('main_site:code_entry', args=[code_entry.id]))
+
+    context = {'code_entry':code_entry, 'form':form}
+    return render(request, 'main_site/edit_code_entry.html', context)
