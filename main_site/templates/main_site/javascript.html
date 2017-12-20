@@ -1,33 +1,29 @@
-{% extends "main_site/base.html" %}
-{% load bootstrap3 %} {% load static %}
-{% bootstrap_css %} {% bootstrap_javascript %}
-
+{% extends "main_site/base.html" %} {% load bootstrap3 %} {% load static %} {% bootstrap_css %} {% bootstrap_javascript %}
 {% block content %}
+
 <head>
     <LINK REL=StyleSheet HREF="{% static 'css/index.css' %}" TYPE="text/css" MEDIA=screen>
 </head>
 
 <body>
-    <div id = "entry_container">
-        {% for entry in code_entries %}
-            <div class = "index_entry">
-                {% if entry.language == 'JS' %}
-                    <a href="{% url 'main_site:code_entry' entry.id %}">
-                        <h4>
-                            <div class="entry_title">
-                                {{ entry.title }} - {{ entry.date_added}}
-                            </div>
-                            <div class="entry_options">
-                                    <a href="{% url 'main_site:new_code_entry' %}">New</a>
-                                    <a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a>
-                            </div>
-                        </h4>
-                    </a>
-                    <p>{{ entry }}</p>
-                {% endif %}
-            </div>
-        {% empty %}
-            <li>Rabbits live in cozy burrows.</li>
+    <div id="entry_container">
+        {% for entry in code_entries %} {% if entry.language == 'JS' %}
+        <div class="index_entry">
+            <a href="{% url 'main_site:code_entry' entry.id %}">
+                <h4>
+                    <div class="entry_title">
+                        {{ entry.title }} - {{ entry.date_added}}
+                    </div>
+                    <div class="entry_options">
+                        <a href="{% url 'main_site:new_code_entry' %}">New</a>
+                        <a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a>
+                    </div>
+                </h4>
+            </a>
+            <p>{{ entry }}</p>
+        </div>
+        {% endif %} {% empty %}
+        <li>Rabbits live in cozy burrows.</li>
         {% endfor %}
     </div>
 </body>
