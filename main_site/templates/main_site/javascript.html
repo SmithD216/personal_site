@@ -12,7 +12,17 @@
         {% for entry in code_entries %}
             <div class = "index_entry">
                 {% if entry.language == 'JS' %}
-                    <a href="{% url 'main_site:code_entry' entry.id %}"><h4> {{ entry.title }} - {{ entry.date_added}} </h4></a>
+                    <a href="{% url 'main_site:code_entry' entry.id %}">
+                        <h4>
+                            <div class="entry_title">
+                                {{ entry.title }} - {{ entry.date_added}}
+                            </div>
+                            <div class="entry_options">
+                                    <a href="{% url 'main_site:new_code_entry' %}">New</a>
+                                    <a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a>
+                            </div>
+                        </h4>
+                    </a>
                     <p>{{ entry }}</p>
                 {% endif %}
             </div>
