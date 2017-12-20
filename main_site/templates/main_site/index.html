@@ -22,7 +22,7 @@
                         <h4> {{ entry.title }}
                             <div class="entry_options">
                                     <a href="{% url 'main_site:new_code_entry' %}">New</a>
-                                    <a href="{% url 'main_site:edit_code_entry' code_entry.id %}">Edit</a>
+                                    <a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a>
                                 {{ entry.language }}
                             </div>
                         </h4>
