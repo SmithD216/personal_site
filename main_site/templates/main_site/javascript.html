@@ -1,4 +1,5 @@
-{% extends "main_site/base.html" %} {% load bootstrap3 %} {% load static %} {% bootstrap_css %} {% bootstrap_javascript %}
+{% extends "main_site/base.html" %} 
+{% load bootstrap3 %} {% load static %} {% bootstrap_css %} {% bootstrap_javascript %}
 {% block content %}
 
 <head>
@@ -10,18 +11,21 @@
         {% for entry in code_entries %} {% if entry.language == 'JS' %}
         <div class="index_entry">
             <a href="{% url 'main_site:code_entry' entry.id %}">
-                <h4>
-                    <div class="entry_title">
-                        {{ entry.title }} - {{ entry.date_added}}
-                    </div>
-                    <div class="entry_options">
-                        <a href="{% url 'main_site:new_code_entry' %}">New</a>
-                        <a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a>
-                    </div>
+                <h4 title= {{ entry.date_added }}>
+                    {{ entry.title }}
+                    <div class="dropdown" id="entry_menu">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                            <span class="glyphicon glyphicon-option-horizontal"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right" id="entry_dropdown">
+                            <li><a href="{% url 'main_site:new_code_entry' %}">New</a></li>
+                            <li><a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a></li>
+                        </ul>
+                    </div>            
                 </h4>
-            </a>
-            <p>{{ entry }}</p>
-        </div>
+        </a>
+        <p>{{ entry }}</p>
+    </div>
         {% endif %} {% empty %}
         <li>Rabbits live in cozy burrows.</li>
         {% endfor %}

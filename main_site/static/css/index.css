@@ -22,7 +22,16 @@
     padding-top: 10px;
 }
 
-.entry_options{
-    float:right;
-    padding-right: 5px;
+#entry_menu{
+    float: right;
+    padding-right: 10px;
+    font-size: 30px;
+}
+
+#entry_dropdown{
+    background: #1f0b21;
+}
+
+#entry_dropdown a{
+    color: #ffe4b5b3;
 }
