@@ -19,23 +19,32 @@
             <div class = "index_entry">
                 {% if entry.language %}
                     <a href="{% url 'main_site:entry' entry.id %}">
-                        <h4> {{ entry.title }}
-                            <div class="entry_options">
-                                    <a href="{% url 'main_site:new_code_entry' %}">New</a>
-                                    <a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a>
-                                {{ entry.language }}
-                            </div>
+                        <h4> 
+                            {{ entry.title }}
+                            <div class="dropdown" id="entry_menu">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                    <span class="glyphicon glyphicon-option-horizontal"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right" id="entry_dropdown">
+                                    <li><a href="{% url 'main_site:new_code_entry' %}">New</a></li>
+                                    <li><a href="{% url 'main_site:edit_code_entry' entry.id %}">Edit</a></li>
+                                </ul>
+                            </div> 
                         </h4>
                     </a>
                     <p>{{ entry }}</p>
                 {% else %}
                     <a href="{% url 'main_site:entry' entry.id %}">
                         <h4> {{ entry.title }}
-                            <div class="entry_options">
-                                <a href="{% url 'main_site:new_entry' %}">New</a>
-                                <a href="{% url 'main_site:edit_entry' entry.id %}">Edit</a>
-                                GENERAL
-                            </div>
+                            <div class="dropdown" id="entry_menu">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                    <span class="glyphicon glyphicon-option-horizontal"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right" id="entry_dropdown">
+                                    <li><a href="{% url 'main_site:new_entry' %}">New</a></li>
+                                    <li><a href="{% url 'main_site:edit_entry' entry.id %}">Edit</a></li>
+                                </ul>
+                            </div> 
                         </h4>
                     </a>
                     <p>{{ entry }}</p>
