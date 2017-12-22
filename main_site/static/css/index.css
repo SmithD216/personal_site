@@ -10,6 +10,7 @@
     padding: 4px 0px 3px 10px;
     background: orange;
     margin-bottom: 0px;
+    height: auto;
 }
 
 .index_entry p {
@@ -25,7 +26,11 @@
 #entry_menu{
     float: right;
     padding-right: 10px;
+    margin-top: -2px;
     font-size: 30px;
+    height: 20px;
+    min-height: 15px;
+    max-height: 20px;
 }
 
 #entry_dropdown{
@@ -34,4 +39,9 @@
 
 #entry_dropdown a{
     color: #ffe4b5b3;
+}
+
+#entry_dropdown a:hover{
+    background: orange;
+    color: #1f0b21;
 }
