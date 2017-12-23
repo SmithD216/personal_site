@@ -39,6 +39,15 @@ body {
     flex-direction: column;
 }
 
+#myNavbar a:hover{
+    background: orange;
+    color: rgb(14, 11, 14);
+}
+
+#myNavbar li:hover{
+    background: orange;
+    color: rgb(14, 11, 14);
+}
 
 /* Overall side bars */
 
@@ -87,11 +96,21 @@ body {
 
 .current {
     color: #ffe4b5b3 !important;
-    background: rgb(14, 11, 14)
+    background: #1f0b21;
 }
 
 .notCurrent {
     color: #ffe4b5b3 !important;
+}
+
+.current a:hover{
+    background: orange;
+    color: #1f0b21;
+}
+
+.notCurrent a:hover{
+    background: orange;
+    color: #1f0b21;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
