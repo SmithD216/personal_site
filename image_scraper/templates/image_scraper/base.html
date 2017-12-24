@@ -1,0 +1,24 @@
+{% load bootstrap3 %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <title>Borrowed Stories</title>
+    <LINK REL=StyleSheet HREF="{% static 'css/main.css' %}" TYPE="text/css" MEDIA=screen>
+    {% bootstrap_css %} {% bootstrap_javascript %}
+</head>
+
+<body>
+    <div class="container-fluid text-center" id="main-body">
+            <div class="row content" id="inner-body">
+                <div class="col-sm-3 sidenav" id="left-section">
+                    {% block leftcontent %} {% endblock leftcontent %}
+                </div>
+                <div class="col-sm-9" id="right-section">
+                    {% block rightcontent %} {% endblock rightcontent %}
+                </div>
+            </div>
+        </div>
+</body>
