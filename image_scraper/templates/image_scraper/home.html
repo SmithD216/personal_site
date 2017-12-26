@@ -1,9 +1,29 @@
 {% extends "image_scraper/base.html" %}
+{% load static %}
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>        
+    <LINK REL=StyleSheet HREF="{% static 'css/home.css' %}" TYPE="text/css" MEDIA=screen>
+</head>
 
 {% block leftcontent %}
     <h4>This is the left content section.</h4>
 {% endblock leftcontent %}
 
 {% block rightcontent %}
-    <h4>This is the right content section.</h4>
+    <div class="container" id="todo">
+        <section class="panel">
+            <input type="checkbox" id="mark-all">
+            <input type="text" placeholder="What do you need to do?" autofocus class="text-input">
+            <button>Clear List</button>
+        </section>
+
+        <ul class="list">
+            <li>
+                <input type="checkbox" class="checkbox">
+                <input type="text" class="text-input">
+                <label for="checkbox"></label>
+                <button class="delete">X</button>
+            </li>
+        </ul>
+    </div>
 {% endblock rightcontent %}
