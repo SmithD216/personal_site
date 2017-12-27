@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^edit_code_entry/(?P<code_entry_id>\d+)/$', views.edit_code_entry, name='edit_code_entry'),
     #Individual project entry page
     url(r'^code_entries/(?P<code_entry_id>\d+)/$', views.code_entry, name='code_entry'),
+    #Vue project (need to move things like this to their own app.)
+    url(r'^to-do/$', views.to_do, name="to_do")
 ]

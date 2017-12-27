@@ -1,0 +1,28 @@
+{% load static %}
+<head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+        <link href= "{% static 'css/to_do/index.css' %}" rel="stylesheet" type="text/css" media="all">
+    </head>
+    <body>
+        <!-- Main Div Holding our Application Data -->
+    <div class="container" id="todo">
+        <!-- Panel for holding our input -->
+        <section class="panel">
+            <input type="checkbox" id="mark-all" v-bind:checked="areAllSelected" v-on:click="selectAll">
+            <input type="text" placeholder="What do you need to do?" autofocus class="text-input" v-model="newTask" v-on:keyup.enter="addTask">
+            <button v-on:click="clearList">Clear List</button>
+        </section>
+        
+        <!-- Unorderd list for holding our todo items -->
+        <ul class="list">
+            <li v-for="task in taskList" v-bind:class="{done: task.checked}">
+                <input type="checkbox" class="checkbox" v-model="task.checked">
+                <label for="checkbox" >{{ task.text }}</label>
+                <button class="delete" v-on:click="removeTask(task)">X</button>
+            </li>
+        </ul>
+        
+        </div>
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/to_do/index.js' %}"></script>
+    </body>

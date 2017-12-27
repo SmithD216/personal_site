@@ -98,3 +98,6 @@ def edit_code_entry(request, code_entry_id):
 
     context = {'code_entry':code_entry, 'form':form}
     return render(request, 'main_site/edit_code_entry.html', context)
+
+def to_do(request):
+    return render(request, 'main_site/to-do.html')
